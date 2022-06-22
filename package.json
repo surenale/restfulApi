@@ -1,0 +1,23 @@
+{
+  "name": "restfulapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "Suren Ale",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.4.0",
+    "node": "^18.4.0",
+    "nodemon": "^2.0.16",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
