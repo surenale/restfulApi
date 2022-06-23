@@ -38,6 +38,19 @@ app.post("/students", async (req, res) => {
         res.status(400).send(e);
     }
 })
+
+// read the data of registered students
+app.get("/students", async (req, res) => {
+    try {
+        const studentsData = await Student.find();
+        res.send(studentsData);
+    } catch (e) {
+        res.send(e);
+    }
+})
+
+
+
 //for respose back to the user server should be listened
 // so defining port for listening
 app.listen(port, function () {
