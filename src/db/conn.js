@@ -2,8 +2,8 @@
 
 const mongoose = require("mongoose"); 
 
+// connection to mongodb and creating students-api database
 mongoose.connect("mongodb://localhost:27017/students-api", {
-    //useCreateIndex: true,
     useNewUrlParser: true,
     useunifiedTopology: true
 }).then(() => {
@@ -14,7 +14,4 @@ mongoose.connect("mongodb://localhost:27017/students-api", {
   
 }) 
   
- 
 
-// we can check the connection successful or not by requiring
-//the file in express application
