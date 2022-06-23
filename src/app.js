@@ -49,7 +49,20 @@ app.get("/students", async (req, res) => {
     }
 })
 
-
+// get the individual Student data using id
+app.get("/students/:id", async (req, res) => {
+    try {
+        const _id = req.params.id;
+        const studentData = await Student.findById(_id);
+        if (!studentData) {
+            return res.status(404).send();
+        } else {
+            res.send(studentData);
+        }
+    } catch (e) {
+        res.status(500).send(e);
+    }
+})
 
 //for respose back to the user server should be listened
 // so defining port for listening
