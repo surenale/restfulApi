@@ -64,6 +64,19 @@ app.get("/students/:id", async (req, res) => {
     }
 })
 
+//update the students by it's id
+app.patch("/students/:id", async (req, res) => {
+    try {
+        const _id = req.params.id;
+        const updateStudent = await Student.findByIdAndUpdate(_id, req.body, {
+            new: true
+        });
+        res.send(updateStudent);
+    } catch (e) {
+        res.status(404).send(e);
+    }
+})
+
 //for respose back to the user server should be listened
 // so defining port for listening
 app.listen(port, function () {
