@@ -77,6 +77,21 @@ app.patch("/students/:id", async (req, res) => {
     }
 })
 
+// delete the student by it's id
+app.delete("/students/:id", async (req, res) => {
+    try {
+        const _id = req.params.id;
+        const deleteStudent = await Student.findByIdAndDelete(_id);
+        if(!_id){
+            return res.status(400).send(); 
+        }
+        res.send(deleteStudent);
+    } catch (e) {
+        res.status(500).send(e);
+    }
+})
+
+
 //for respose back to the user server should be listened
 // so defining port for listening
 app.listen(port, function () {
