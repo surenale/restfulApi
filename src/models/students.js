@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
+//defining schema using mongoose
 const studentsSchema = new mongoose.Schema({
    name: {
       type: String,
